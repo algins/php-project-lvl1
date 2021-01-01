@@ -1,4 +1,4 @@
-name: linter
+name: main
 
 on: push
 
@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Install project
+        run: make install
 
       - name: Run linter
         run: make lint
