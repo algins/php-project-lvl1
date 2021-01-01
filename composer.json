@@ -2,7 +2,15 @@
     "name": "hexlet/code",
     "description": "A set of five console games, built on the principle of popular mobile brain training apps",
     "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
     "bin": [
         "bin/brain-games"
-    ]
+    ],
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }
