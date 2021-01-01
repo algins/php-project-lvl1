@@ -1,0 +1,15 @@
+name: linter
+
+on: push
+
+jobs:
+  lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+      - uses: actions/checkout@v2
+
+      - name: Run linter
+        run: make lint
