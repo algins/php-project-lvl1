@@ -1,10 +1,8 @@
 {
     "name": "hexlet/code",
-    "authors": [
-        {
-            "name": "algins",
-            "email": "igors.algins@gmail.com"
-        }
-    ],
-    "require": {}
+    "description": "A set of five console games, built on the principle of popular mobile brain training apps",
+    "license": "MIT",
+    "bin": [
+        "bin/brain-games"
+    ]
 }
