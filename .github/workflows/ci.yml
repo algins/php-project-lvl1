@@ -1,15 +1,17 @@
-name: main
+name: CI
 
 on: push
 
 jobs:
-  lint:
-    name: Lint code base
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Validate composer.json
+        run: make validate
 
       - name: Install project
         run: make install
