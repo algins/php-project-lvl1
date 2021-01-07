@@ -6,5 +6,9 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/algins/php-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/algins/php-project-lvl1/actions)
 
+### Setup:
+* [Install](https://asciinema.org/a/aajmKqSMfaieJtLMhJ3Z3t5Mp)
+
 ### Demo:
-https://asciinema.org/a/8c19uAtt0e8k7DBRbwW26veGl
+* [Even](https://asciinema.org/a/S9WD17tSsjID3Vf5Stl6GV61b)
+* [Calc](https://asciinema.org/a/ukspYTyMtlBNFwzrY2euHN3XM)

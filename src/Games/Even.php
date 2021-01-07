@@ -1,6 +1,8 @@
 <?php
 
-namespace Brain\Games\Even;
+namespace BrainGames\Games\Even;
+
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function handle()
 {
@@ -15,7 +17,7 @@ function handle()
 
     return [
         'game' => $game,
-        'description' => 'Answer "yes" if the number is even, otherwise answer "no".',
+        'description' => GAME_DESCRIPTION,
     ];
 }
 
