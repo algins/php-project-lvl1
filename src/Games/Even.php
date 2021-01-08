@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Even;
 
+use function BrainGames\Engine\handle as startGame;
+
 const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function handle()
@@ -16,10 +18,7 @@ function handle()
         ];
     };
 
-    return [
-        'game' => $game,
-        'description' => GAME_DESCRIPTION,
-    ];
+    startGame($game, GAME_DESCRIPTION);
 }
 
 function getNumber()

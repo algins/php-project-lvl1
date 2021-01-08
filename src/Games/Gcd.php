@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Gcd;
 
+use function BrainGames\Engine\handle as startGame;
+
 const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function handle()
@@ -17,10 +19,7 @@ function handle()
         ];
     };
 
-    return [
-        'game' => $game,
-        'description' => GAME_DESCRIPTION,
-    ];
+    startGame($game, GAME_DESCRIPTION);
 }
 
 function getNumber()

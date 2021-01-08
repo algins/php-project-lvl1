@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Calc;
 
+use function BrainGames\Engine\handle as startGame;
+
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 
 function handle()
@@ -18,10 +20,7 @@ function handle()
         ];
     };
 
-    return [
-        'game' => $game,
-        'description' => GAME_DESCRIPTION,
-    ];
+    startGame($game, GAME_DESCRIPTION);
 }
 
 function getNumber()
