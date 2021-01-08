@@ -14,7 +14,7 @@ function handle()
         $answer = getGcd($firstNumber, $secondNumber);
 
         return [
-            'question' => "{$firstNumber} {$operation} {$secondNumber}",
+            'question' => "{$firstNumber} {$secondNumber}",
             'answer' => "{$answer}",
         ];
     };
