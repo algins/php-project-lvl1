@@ -8,10 +8,11 @@ function handle()
 {
     $game = function () {
         $number = getNumber();
+        $answer = getAnswer($number);
 
         return [
             'question' => $number,
-            'answer' => getAnswer($number),
+            'answer' => $answer,
         ];
     };
 

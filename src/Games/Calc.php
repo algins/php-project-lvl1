@@ -10,11 +10,11 @@ function handle()
         $firstNumber = getNumber();
         $secondNumber = getNumber();
         $operation = getOperation();
-        $result = calc($firstNumber, $secondNumber, $operation);
+        $answer = calc($firstNumber, $secondNumber, $operation);
 
         return [
             'question' => "{$firstNumber} {$operation} {$secondNumber}",
-            'answer' => "{$result}",
+            'answer' => "{$answer}",
         ];
     };
 
