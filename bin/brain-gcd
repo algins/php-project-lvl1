@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+
+<?php
+
+use function BrainGames\Engine\handle;
+use function BrainGames\Games\Gcd\handle as getGameData;
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+['game' => $game, 'description' => $description] = getGameData();
+handle($game, $description);
