@@ -6,13 +6,14 @@ use function BrainGames\Engine\handle as startGame;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 const MAX_NUMBER = 10;
+const OPERATIONS = ['+', '-', '*'];
 
 function handle()
 {
     $game = function () {
         $num1 = mt_rand(1, MAX_NUMBER);
         $num2 = mt_rand(1, MAX_NUMBER);
-        $operation = getOperation();
+        $operation = OPERATIONS[array_rand(OPERATIONS)];
         $answer = calc($num1, $num2, $operation);
 
         return [
@@ -22,13 +23,6 @@ function handle()
     };
 
     startGame($game, GAME_DESCRIPTION);
-}
-
-function getOperation()
-{
-    $operations = ['+', '-', '*'];
-
-    return $operations[array_rand($operations)];
 }
 
 function calc($num1, $num2, $operation)
