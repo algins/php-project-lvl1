@@ -5,36 +5,28 @@ namespace BrainGames\Games\Even;
 use function BrainGames\Engine\handle as startGame;
 
 const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+const MAX_NUMBER = 100;
 
 function handle()
 {
     $game = function () {
-        $number = getNumber();
-        $answer = getAnswer($number);
+        $num = mt_rand(1, MAX_NUMBER);
 
         return [
-            'question' => $number,
-            'answer' => $answer,
+            'question' => $num,
+            'answer' => getAnswer($num),
         ];
     };
 
     startGame($game, GAME_DESCRIPTION);
 }
 
-function getNumber()
+function isEven($num)
 {
-    $min = 1;
-    $max = 100;
-
-    return mt_rand($min, $max);
+    return $num % 2 === 0;
 }
 
-function isEven($number)
+function getAnswer($num)
 {
-    return $number % 2 === 0;
-}
-
-function getAnswer($number)
-{
-    return isEven($number) ? 'yes' : 'no';
+    return isEven($num) ? 'yes' : 'no';
 }

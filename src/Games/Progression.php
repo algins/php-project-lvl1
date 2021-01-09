@@ -18,10 +18,9 @@ function handle()
         $key = getRandomKey($progression);
         $answer = $progression[$key];
         $progression[$key] = '..';
-        $question = implode(' ', $progression);
 
         return [
-            'question' => $question,
+            'question' => implode(' ', $progression),
             'answer' => "{$answer}",
         ];
     };

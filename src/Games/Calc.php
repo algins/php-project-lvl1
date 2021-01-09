@@ -5,30 +5,23 @@ namespace BrainGames\Games\Calc;
 use function BrainGames\Engine\handle as startGame;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
+const MAX_NUMBER = 10;
 
 function handle()
 {
     $game = function () {
-        $firstNumber = getNumber();
-        $secondNumber = getNumber();
+        $num1 = mt_rand(1, MAX_NUMBER);
+        $num2 = mt_rand(1, MAX_NUMBER);
         $operation = getOperation();
-        $answer = calc($firstNumber, $secondNumber, $operation);
+        $answer = calc($num1, $num2, $operation);
 
         return [
-            'question' => "{$firstNumber} {$operation} {$secondNumber}",
+            'question' => "{$num1} {$operation} {$num2}",
             'answer' => "{$answer}",
         ];
     };
 
     startGame($game, GAME_DESCRIPTION);
-}
-
-function getNumber()
-{
-    $min = 1;
-    $max = 10;
-
-    return mt_rand($min, $max);
 }
 
 function getOperation()
@@ -38,15 +31,15 @@ function getOperation()
     return $operations[array_rand($operations)];
 }
 
-function calc($firstNumber, $secondNumber, $operation)
+function calc($num1, $num2, $operation)
 {
     switch ($operation) {
         case '+':
-            return $firstNumber + $secondNumber;
+            return $num1 + $num2;
         case '-':
-            return $firstNumber - $secondNumber;
+            return $num1 - $num2;
         case '*':
-            return $firstNumber * $secondNumber;
+            return $num1 * $num2;
         default:
             return false;
     }
