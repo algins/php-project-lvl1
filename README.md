@@ -14,3 +14,4 @@
 * [Calc](https://asciinema.org/a/ukspYTyMtlBNFwzrY2euHN3XM)
 * [Gcd](https://asciinema.org/a/ThbcRToULMiDNQ2Pzf5sKSIXk)
 * [Progression](https://asciinema.org/a/PHIzWTNBrH27yxBGUpUrwXZJ6)
+* [Prime](https://asciinema.org/a/iBeydacPnnfyVkb9DydJo4W4y)
