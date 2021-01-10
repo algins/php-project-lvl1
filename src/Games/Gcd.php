@@ -7,9 +7,9 @@ use function BrainGames\Engine\handle as startGame;
 const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 const MAX_NUMBER = 10;
 
-function handle()
+function handle(): void
 {
-    $game = function () {
+    $game = function (): array {
         $num1 = mt_rand(1, MAX_NUMBER);
         $num2 = mt_rand(1, MAX_NUMBER);
         $answer = calcGcd($num1, $num2);
@@ -23,7 +23,7 @@ function handle()
     startGame($game, GAME_DESCRIPTION);
 }
 
-function calcGcd($num1, $num2)
+function calcGcd(int $num1, int $num2): int
 {
     $min = min($num1, $num2);
     $max = max($num1, $num2);

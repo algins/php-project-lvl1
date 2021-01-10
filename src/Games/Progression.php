@@ -9,9 +9,9 @@ const MAX_PROGRESSION_START_VALUE = 10;
 const MAX_PROGRESSION_STEP = 5;
 const PROGRESSION_SIZE = 10;
 
-function handle()
+function handle(): void
 {
-    $game = function () {
+    $game = function (): array {
         $start = mt_rand(1, MAX_PROGRESSION_START_VALUE);
         $step = mt_rand(1, MAX_PROGRESSION_STEP);
         $progression = generateProgression($start, $step, PROGRESSION_SIZE);
@@ -28,7 +28,7 @@ function handle()
     startGame($game, GAME_DESCRIPTION);
 }
 
-function generateProgression($start, $step, $size)
+function generateProgression(int $start, int $step, int $size): array
 {
     $progression = [];
 
@@ -39,7 +39,7 @@ function generateProgression($start, $step, $size)
     return $progression;
 }
 
-function getRandomKey(array $arr)
+function getRandomKey(array $arr): int
 {
     return array_rand($arr, 1);
 }

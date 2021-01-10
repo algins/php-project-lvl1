@@ -8,9 +8,9 @@ const GAME_DESCRIPTION = 'What is the result of the expression?';
 const MAX_NUMBER = 10;
 const OPERATIONS = ['+', '-', '*'];
 
-function handle()
+function handle(): void
 {
-    $game = function () {
+    $game = function (): array {
         $num1 = mt_rand(1, MAX_NUMBER);
         $num2 = mt_rand(1, MAX_NUMBER);
         $operation = OPERATIONS[array_rand(OPERATIONS)];
@@ -25,7 +25,7 @@ function handle()
     startGame($game, GAME_DESCRIPTION);
 }
 
-function calc($num1, $num2, $operation)
+function calc(int $num1, int $num2, string $operation): ?int
 {
     switch ($operation) {
         case '+':
@@ -35,6 +35,6 @@ function calc($num1, $num2, $operation)
         case '*':
             return $num1 * $num2;
         default:
-            return false;
+            return null;
     }
 }

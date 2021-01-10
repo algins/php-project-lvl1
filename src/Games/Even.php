@@ -7,9 +7,9 @@ use function BrainGames\Engine\handle as startGame;
 const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 const MAX_NUMBER = 100;
 
-function handle()
+function handle(): void
 {
-    $game = function () {
+    $game = function (): array {
         $num = mt_rand(1, MAX_NUMBER);
 
         return [
@@ -21,12 +21,12 @@ function handle()
     startGame($game, GAME_DESCRIPTION);
 }
 
-function isEven($num)
+function isEven(int $num): bool
 {
     return $num % 2 === 0;
 }
 
-function getAnswer($num)
+function getAnswer(int $num): string
 {
     return isEven($num) ? 'yes' : 'no';
 }
