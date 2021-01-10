@@ -15,7 +15,7 @@ function handle(): void
         $start = mt_rand(1, MAX_PROGRESSION_START_VALUE);
         $step = mt_rand(1, MAX_PROGRESSION_STEP);
         $progression = generateProgression($start, $step, PROGRESSION_SIZE);
-        $key = getRandomKey($progression);
+        $key = array_rand($progression);
         $answer = $progression[$key];
         $progression[$key] = '..';
 
@@ -37,9 +37,4 @@ function generateProgression(int $start, int $step, int $size): array
     }
 
     return $progression;
-}
-
-function getRandomKey(array $arr): int
-{
-    return array_rand($arr, 1);
 }
