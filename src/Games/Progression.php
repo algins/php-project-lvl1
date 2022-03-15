@@ -16,7 +16,7 @@ function runGame(): void
         $step = mt_rand(1, MAX_PROGRESSION_STEP);
         $hiddenIndex = mt_rand(0, PROGRESSION_SIZE - 1);
         $progression = generateProgression($start, $step, PROGRESSION_SIZE, $hiddenIndex);
-        $answer = $hiddenIndex === 0 ? $progression[1] - $step : $progression[$hiddenIndex - 1] + $step;
+        $answer = $start + $step * $hiddenIndex;
 
         return [
             'question' => implode(' ', $progression),
