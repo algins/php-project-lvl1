@@ -2,13 +2,13 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\handle as startGame;
+use function BrainGames\Engine\run;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 const MAX_NUMBER = 10;
 const OPERATIONS = ['+', '-', '*'];
 
-function handle(): void
+function runGame(): void
 {
     $game = function (): array {
         $num1 = mt_rand(1, MAX_NUMBER);
@@ -22,7 +22,7 @@ function handle(): void
         ];
     };
 
-    startGame($game, GAME_DESCRIPTION);
+    run($game, GAME_DESCRIPTION);
 }
 
 function calc(int $num1, int $num2, string $operation): ?int

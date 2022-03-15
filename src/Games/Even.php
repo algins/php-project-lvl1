@@ -2,12 +2,12 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\Engine\handle as startGame;
+use function BrainGames\Engine\run;
 
 const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 const MAX_NUMBER = 100;
 
-function handle(): void
+function runGame(): void
 {
     $game = function (): array {
         $num = mt_rand(1, MAX_NUMBER);
@@ -18,7 +18,7 @@ function handle(): void
         ];
     };
 
-    startGame($game, GAME_DESCRIPTION);
+    run($game, GAME_DESCRIPTION);
 }
 
 function isEven(int $num): bool

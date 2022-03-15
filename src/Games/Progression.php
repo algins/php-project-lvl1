@@ -2,14 +2,14 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\handle as startGame;
+use function BrainGames\Engine\run;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
 const MAX_PROGRESSION_START_VALUE = 10;
 const MAX_PROGRESSION_STEP = 5;
 const PROGRESSION_SIZE = 10;
 
-function handle(): void
+function runGame(): void
 {
     $game = function (): array {
         $start = mt_rand(1, MAX_PROGRESSION_START_VALUE);
@@ -24,7 +24,7 @@ function handle(): void
         ];
     };
 
-    startGame($game, GAME_DESCRIPTION);
+    run($game, GAME_DESCRIPTION);
 }
 
 function generateProgression(int $start, int $step, int $size, int $hiddenIndex): array
