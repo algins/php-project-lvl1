@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Calc;
 
+use Exception;
+
 use function BrainGames\Engine\run;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
@@ -25,7 +27,7 @@ function runGame(): void
     run($game, GAME_DESCRIPTION);
 }
 
-function calc(int $num1, int $num2, string $operation): ?int
+function calc(int $num1, int $num2, string $operation): int
 {
     switch ($operation) {
         case '+':
@@ -35,6 +37,6 @@ function calc(int $num1, int $num2, string $operation): ?int
         case '*':
             return $num1 * $num2;
         default:
-            return null;
+            throw new Exception('Unknown operation!');
     }
 }
